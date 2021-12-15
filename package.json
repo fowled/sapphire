@@ -1,0 +1,22 @@
+{
+  "name": "applemusicrpc",
+  "version": "1.0.0",
+  "description": "A Discord RPC program for the Apple Music app and website",
+  "main": "./out/index.js",
+  "scripts": {
+    "test": "tsc"
+  },
+  "author": "fowled",
+  "license": "MIT",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "discord-rpc": "^4.0.1",
+    "dotenv": "^10.0.0",
+    "prompt": "^1.2.0"
+  },
+  "devDependencies": {
+    "@types/discord-rpc": "^4.0.0",
+    "@types/node": "^16.11.13",
+    "@types/prompt": "^1.1.2"
+  }
+}
