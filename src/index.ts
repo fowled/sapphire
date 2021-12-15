@@ -16,7 +16,7 @@ if (fs.existsSync(path.resolve("./config.json"))) {
     gatherInfo();
 } else {
     log("❗ Config file not found. Starting prompt...".red);
-    
+
     startPrompt();
 }
 
@@ -103,7 +103,7 @@ function startPrompt() {
     });
 }
 
-function registerRPC(info?: JSON) {
+function registerRPC() {
     const RPC = new DiscordRPC.Client({ transport: "ipc" });
 
     function setActivity() {
