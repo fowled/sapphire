@@ -31,10 +31,9 @@ $ npm start
 ```
 
 ## CLI instructions
-When running for the first time, the script will ask you a number of parameters to configure your rich embed status.
-Specify each one carefully.
-For the first field, ou can find your application ID [here](https://discord.com/developers/applications) (select the app, then click `copy application id`).
-You may also note that the **[playing (game)]** is taken from your application name.
+- When running for the first time, the script will ask you a number of parameters to configure your rich embed status. Specify each one carefully.
+- For the first field, you can find your application ID [here](https://discord.com/developers/applications) (select the app, then click `copy application id`).
+- You may also note that the **[playing (game)]** is taken from your application name.
 
 ## Result & screenshots
 ![image](https://user-images.githubusercontent.com/37367577/146373129-2cf737d3-96e1-4c76-b8a2-05b2fbdb99f2.png)
