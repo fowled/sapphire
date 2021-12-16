@@ -4,8 +4,7 @@
   "description": "A simple script that makes getting a cool Rich Presence status simple.",
   "main": "./out/index.js",
   "scripts": {
-    "preinstall": "npm install --global yarn",
-    "install": "yarn global add typescript && yarn install",
+    "preinstall": "npm install --global typescript",
     "start": "tsc && node .",
     "test": "tsc"
   },
