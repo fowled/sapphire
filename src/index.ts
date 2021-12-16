@@ -6,14 +6,29 @@ import "colors";
 
 import { log, error } from "./utils/logger";
 
-let applicationID: string, details: string, state: string, largeImageKey: string, largeImageText: string, config: string;
+let applicationID: string;
 
 log("👋 Custom-RPC is now running. Trying to access the config file...".green);
 
 if (fs.existsSync(path.resolve("./config.json"))) {
-    log("✅ Config file found. Attempting to gather info... If you wish to edit your configuration, just delete the file.".green);
+    prompt.start();
 
-    gatherInfo();
+    prompt.get([
+        {
+            name: "getconfig",
+            description: "✅ Config file found. Do you want to load it? (y/n)".magenta,
+            required: true
+        }
+    ], (err, result) => {
+        if (err) error(err);
+
+        if (result.getconfig === "y" || result.getconfig === "yes") {
+            gatherInfo();
+        } else {
+            startPrompt();
+        }
+    });
+
 } else {
     log("❗ Config file not found. Starting prompt...".red);
 
@@ -29,12 +44,8 @@ function gatherInfo() {
         const data = JSON.parse(rawdata);
 
         applicationID = data["ID"];
-        details = data["details"];
-        state = data["state"];
-        largeImageKey = data["largeImageKey"];
-        largeImageText = data["largeImageText"];
 
-        registerRPC();
+        registerRPC(data);
     });
 }
 
@@ -81,13 +92,8 @@ function startPrompt() {
         if (err) error(err);
 
         applicationID = result.ID as string;
-        details = result.details as string;
-        state = result.state as string;
-        largeImageKey = result.largeImageKey as string;
-        largeImageText = result.largeImageText as string;
-        config = result.config as string;
 
-        if (config === "y" || config === "yes") {
+        if (result.config === "y" || result.config === "yes") {
             log("🐞 Trying to save your configuration...".blue);
 
             try {
@@ -99,19 +105,19 @@ function startPrompt() {
             }
         }
 
-        registerRPC();
+        registerRPC(result);
     });
 }
 
-function registerRPC() {
+function registerRPC(info: any) {
     const RPC = new DiscordRPC.Client({ transport: "ipc" });
 
     function setActivity() {
         RPC.setActivity({
-            details,
-            state,
-            largeImageKey,
-            largeImageText,
+            details: info.details,
+            state: info.state,
+            largeImageKey: info.largeImageKey,
+            largeImageText: info.largeImageText,
             instance: false
         });
     }
