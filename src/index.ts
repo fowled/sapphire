@@ -84,6 +84,12 @@ function startPrompt() {
         },
 
         {
+            name: "startTimestamp",
+            description: "Enable start timestamp? (y/n)".yellow,
+            required: true
+        },
+
+        {
             name: "config",
             description: "Do you want this configuration to be saved in a config.json file? (y/n)".magenta,
             required: true
@@ -111,6 +117,11 @@ function startPrompt() {
 
 function registerRPC(info: any) {
     const RPC = new DiscordRPC.Client({ transport: "ipc" });
+    let startTimestamp: any;
+
+    if (info.startTimestamp === "y" || info.startTimestamp === "yes") {
+        startTimestamp = new Date();
+    }
 
     function setActivity() {
         RPC.setActivity({
@@ -118,7 +129,8 @@ function registerRPC(info: any) {
             state: info.state,
             largeImageKey: info.largeImageKey,
             largeImageText: info.largeImageText,
-            instance: false
+            instance: false,
+            startTimestamp
         });
     }
 
