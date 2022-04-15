@@ -5,7 +5,8 @@ Sapphire is **a NodeJS script** that makes getting a cool Discord rich presence 
 Have you ever wondered how do your friends get such a clean status below their Discord profile?
 
 ![image](https://user-images.githubusercontent.com/37367577/163578174-c631fdff-105b-4104-ba51-6c0c62cd3847.png)
-Well - search no more. You've just come accross the solution!
+
+Well - search no more. You've just found the solution!
 
 ## Prerequisites
 - You need to have NodeJS v16.6.0 or newer installed on your machine.
