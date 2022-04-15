@@ -1,13 +1,10 @@
-<div align="center">
-    <h1>Sapphire 💎</h1>
-    <p>Sapphire is <b>a NodeJS script</b> that makes getting a cool Discord rich presence status simple.</p>
-</div>
+# Sapphire 💎
+Sapphire is **a NodeJS script** that makes getting a cool Discord rich presence status simple.
 
 ## Intro
 Have you ever wondered how do your friends get such a clean status below their Discord profile?
 
-![image](https://user-images.githubusercontent.com/37367577/146341766-118f5720-59b1-46f3-9981-26ddfb95e0f8.png)
-
+![image](https://user-images.githubusercontent.com/37367577/163578174-c631fdff-105b-4104-ba51-6c0c62cd3847.png)
 Well - search no more. You've just come accross the solution!
 
 ## Prerequisites
@@ -34,7 +31,3 @@ $ npm start
 - When running for the first time, the script will ask you a number of parameters to configure your rich embed status. Specify each one carefully.
 - For the first field, you can find your application ID [here](https://discord.com/developers/applications) (select the app, then click `copy application id`).
 - You may also note that the **[playing (game)]** is taken from your application name.
-
-## Result & screenshots
-![image](https://user-images.githubusercontent.com/37367577/146373129-2cf737d3-96e1-4c76-b8a2-05b2fbdb99f2.png)
-![image](https://user-images.githubusercontent.com/37367577/146373266-6fb5137d-e5bc-46b8-a80c-ed4209fa0c93.png)
