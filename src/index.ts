@@ -10,7 +10,7 @@ let applicationID: string;
 
 prompt.message = `${chalk.gray(new Date().toLocaleTimeString())} ${chalk.cyan("[ask]")}`;
 
-log(chalk.green("👋 Custom-RPC is now running. Trying to access the config file..."));
+log(chalk.green("👋 Sapphire is now running. Trying to access the config file..."));
 
 if (fs.existsSync(path.resolve("./config.json"))) {
 	prompt.start();
